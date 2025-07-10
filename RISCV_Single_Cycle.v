@@ -16,7 +16,7 @@ module RISCV_Single_Cycle (
     // PC
     assign pcWrite = 1'b1; // Always write PC
     assign pc_plus_4 = pcValueOut + 4;
-    assign branch_target = pcValueOut + Value;
+    assign branch_target = pcValueOut + immValue;
     assign jalr_target = read_data1 + immValue;
     assign pcValueIn = (pc_src == 2'b00) ? pc_plus_4 :
                    (pc_src == 2'b01) ? branch_target :
