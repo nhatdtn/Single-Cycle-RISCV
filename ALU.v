@@ -12,7 +12,7 @@ module ALU (
             4'b0000: finalValue = value1 + value2; // ADD
             4'b0001: finalValue = value1 - value2; // SUB
             4'b0010: finalValue = value1 & value2; // AND
-            4'b0011: finalValue = value | value2; // OR
+            4'b0011: finalValue = value1 | value2; // OR
             4'b0100: finalValue = value1 ^ value2; // XOR
             4'b0101: finalValue = value1 << value2[4:0]; // SLL
             4'b0110: finalValue = value1 >> value2[4:0]; // SRL
