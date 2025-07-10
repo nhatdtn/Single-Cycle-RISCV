@@ -33,7 +33,7 @@ module RISCV_Single_Cycle (
     // IMEM
     IMEM IMEM_inst (
         .addr(pcValueOut),
-        .instr(instr)
+        .inst(instr)
     );
 
     // Control Unit
