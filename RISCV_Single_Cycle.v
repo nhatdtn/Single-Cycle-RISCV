@@ -1,7 +1,7 @@
 module RISCV_Single_Cycle (
     input clk,
     input rst_n,
-    output [31:0] pc_out_top,
+    output [31:0] PC_out_top,
     output [31:0] Instruction_out_top
 );
 
