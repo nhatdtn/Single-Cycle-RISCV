@@ -96,7 +96,7 @@ module RISCV_Single_Cycle (
                         (jump ? pc_plus_4 : alu_finalValue);
 
     // Outputs for testbench
-    assign pcValue_out_top = pcValueOut;
+    assign PC_out_top = pcValueOut;
     assign Instruction_out_top = instr;
 
     always @(posedge clk) begin
