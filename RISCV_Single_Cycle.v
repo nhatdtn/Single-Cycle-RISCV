@@ -16,7 +16,7 @@ module RISCV_Single_Cycle (
     // PC
     assign pcWrite = 1'b1; // Always write PC
     assign pc_plus_4 = pcValueOut + 4;
-    assign branch_target = pcValueOut + immValue;
+    assign branch_target = pcValueOut + Value;
     assign jalr_target = read_data1 + immValue;
     assign pcValueIn = (pc_src == 2'b00) ? pc_plus_4 :
                    (pc_src == 2'b01) ? branch_target :
@@ -33,7 +33,7 @@ module RISCV_Single_Cycle (
     // IMEM
     IMEM IMEM_inst (
         .addr(pcValueOut),
-        .inst(instr)
+        .instr(instr)
     );
 
     // Control Unit
@@ -67,8 +67,8 @@ module RISCV_Single_Cycle (
 
     // Immediate Generator
     ImmGen imm_gen_inst (
-        .inst(instr),
-        .imm(immValue)
+        .instr(instr),
+        .immValue(immValue)
     );
 
     // ALU
